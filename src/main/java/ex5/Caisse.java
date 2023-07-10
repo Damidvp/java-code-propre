@@ -3,7 +3,7 @@ package ex5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Caisse {
+public abstract class Caisse {
 
 	private String nom;
 	private List<Item> items;
@@ -43,6 +43,12 @@ public class Caisse {
 	 */
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+	
+	public abstract void addItem(Item item);
+	
+	public int getTaille() {
+		return this.items.size();
 	}
 	
 }
