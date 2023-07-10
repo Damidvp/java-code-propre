@@ -2,41 +2,43 @@ package ex3;
 
 import java.util.List;
 
-public class Zoo {
+public class Zoo { // Les informations types, noms et comportements peuvent être rattachées à 1
+					// objet commun : Animal (création d'une nouvelle classe et d'une liste d'objets
+					// Animal dans Zoo)
 
 	private String nom;
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public Zoo(String nom){
+	private List<Animal> animaux;
+
+	public Zoo(String nom) {
 		this.nom = nom;
 	}
-	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
-	}
-	
-	public void afficherListeAnimaux(){
-		for (int i=0; i<types.size(); i++) {
-			System.out.println(noms.get(i)+" "+types.get(i)+" "+comportements.get(i));
-		}
-	}
-	
-	public int taille() {
-		return types.size();
+
+	public void addAnimal(Animal animal) {
+		animaux.add(animal);
 	}
 
-	/** Getter for nom
+	public void afficherListeAnimaux() {
+		for (int i = 0; i < animaux.size(); i++) {
+			System.out.println(animaux.get(i).getNom() + " " + animaux.get(i).getType() + " " + animaux.get(i).getComportement());
+		}
+	}
+
+	public int taille() {
+		return animaux.size();
+	}
+
+	/**
+	 * Getter for nom
+	 * 
 	 * @return the nom
 	 */
 	public String getNom() {
 		return nom;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
